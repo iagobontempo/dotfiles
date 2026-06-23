@@ -1,0 +1,37 @@
+#! /bin/sh
+
+internal_monitor=DP-2
+external_monitor=HDMI-0
+
+if xrandr --query | grep "HDMI-0 connected"; then
+    xrandr --output $external_monitor --primary --mode 1920x1080 --rotate normal --output $internal_monitor --mode 1920x1080 --rotate normal --left-of HDMI-0
+fi
+
+sxhkd &
+nm-applet &
+feh --bg-fill $HOME/dotfiles/backgrounds/wall3.jpg &
+picom &
+#/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+if xrandr --query | grep "HDMI-0 connected"; then
+    bspc monitor $external_monitor -d I II III IV V VI
+    bspc monitor $internal_monitor -d X
+else 
+    bspc monitor $internal_monitor -d I II III IV V VI
+    #TODO: need to make all desktops come to this monitor
+fi
+
+bspc config border_width         1
+bspc config window_gap          10
+bspc config top_padding          0
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config normal_border_color "#bd93f9"
+bspc config active_border_color "#B52A5B"
+bspc config focused_border_color "#FF4971"
+bspc config presel_feedback_color "#bd93f9"
+
+$HOME/.config/polybar/launch.sh

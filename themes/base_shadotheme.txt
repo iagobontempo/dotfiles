@@ -1,0 +1,22 @@
+black #140a1d #140a1d
+red #B52A5B #B52A5B 
+green #FF4971 #FF4971
+yellow #8897F4 #8897F4
+blue #bd93f9 #bd93f9
+magenta #E9729D #E9729D
+cyan #F18FB0 #F18FB0
+white #f1c4e0 #f1c4e0
+
+black #a8899c #a8899c
+red #B52A5B #B52A5B
+green #FF4971 #FF4971
+yellow #8897F4 #8897F4
+blue #bd93f9 #bd93f9
+magenta #E9729D #E9729D
+cyan #F18FB0 #F18FB0
+white #f1c4e0 #f1c4e0
+
+background #09090d #09090d
+foreground #e3c7fc #e3c7fc
+cursor #f1c4e0 #f1c4e0
+

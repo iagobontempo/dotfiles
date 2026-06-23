@@ -1,0 +1,8 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1781836551180796289 @name=firefox_firefox
+window-rule {
+    match app-id="^firefox_firefox$"
+    open-maximized true
+}
