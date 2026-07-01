@@ -24,44 +24,58 @@ require("lazy").setup({
     },
 
     -- LSP AND TREESITTER
-    { "nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = { "nvim-lua/plenary.nvim" } },
-    {
-        "VonHeikemen/lsp-zero.nvim",
-        dependencies = {
-            -- LSP Support
-            { "neovim/nvim-lspconfig", tag = 'v1.8.0', pin = true },
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
+    { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 
-            -- Autocompletion
-            "hrsh7th/nvim-cmp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "saadparwaiz1/cmp_luasnip",
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-nvim-lua",
-
-            -- Snippets
-            "L3MON4D3/LuaSnip",
-            "rafamadriz/friendly-snippets",
-
-        }
-    },
+    -- DEFAULT LSP CONFIGURATIONS
+    "neovim/nvim-lspconfig",
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function()
-            local configs = require("nvim-treesitter.configs")
+        opts = {
+            ensure_installed = {
+                "lua",
+                "vim",
+                "vimdoc",
+                "javascript",
+                "typescript",
+                "go",
+                "rust",
+            },
+            highlight = {
+                enable = true,
+            },
+            indent = {
+                enable = true,
+            },
+        },
+    },
 
-            configs.setup({
-                ensure_installed = { "javascript", "typescript", "lua", "rust", "toml", "yaml", "go", "html" },
-                sync_install = false,
-                highlight = {
-                    enable = true,
-                },
-                indent = { enable = true },
-            })
-        end
+    -- AUTO COMPLETION
+    {
+      'saghen/blink.cmp',
+      dependencies = { 'rafamadriz/friendly-snippets' },
+      version = '1.*',
+      opts = {
+        keymap = { 
+            preset = 'default',
+            ["<CR>"] = {
+                "accept",
+                "fallback",
+            },
+        },
+        appearance = {
+          nerd_font_variant = 'mono'
+        },
+        completion = { documentation = { auto_show = false } },
+
+        -- Default list of enabled providers defined so that you can extend it
+        -- elsewhere in your config, without redefining it, due to `opts_extend`
+        sources = {
+          default = { 'lsp', 'path', 'snippets', 'buffer' },
+        },
+        fuzzy = { implementation = "prefer_rust_with_warning" }
+      },
+      opts_extend = { "sources.default" }
     },
 
     -- OTHER STUFF

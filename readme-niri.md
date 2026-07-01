@@ -4,7 +4,7 @@
 
     ```sh
     sudo apt install git curl zsh ohmyzsh ranger fzf ripgrep fd-find jq \
-        guvcview solaar
+        wl-clipboard guvcview solaar
     ```
 </details>
 
