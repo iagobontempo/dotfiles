@@ -15,6 +15,9 @@ vim.keymap.set("n", "<C-I>", "<C-I>", { noremap = true })
 vim.keymap.set("n", "]]", "<cmd>cnext<CR>", { silent = true })
 vim.keymap.set("n", "[[", "<cmd>cprev<CR>", { silent = true })
 
+
+-- Show diagnostics
+vim.keymap.set("n", "<leader>ds", vim.diagnostic.open_float)
 -- Allow to find diagnostics and auto open full floating description (needs custom function to run)
 vim.keymap.set("n", "]d", function()
   vim.diagnostic.jump({ count = 1, float = true})

@@ -60,7 +60,6 @@ require("lazy").setup({
             preset = 'default',
             ["<CR>"] = {
                 "accept",
-                "fallback",
             },
         },
         appearance = {
