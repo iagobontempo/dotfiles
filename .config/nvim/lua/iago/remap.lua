@@ -29,3 +29,10 @@ end)
 -- Allow copy path
 vim.keymap.set("n", "<leader>pa", ':let @+ = expand("%:p")<CR>', { desc = "Copy absolute path" })
 vim.keymap.set("n", "<leader>pr", ':let @+ = expand("%")<CR>', { desc = "Copy relative path" })
+
+-- Format
+vim.keymap.set("n", "<leader>f", function()
+  vim.lsp.buf.format({ async = true })
+end, {
+  desc = "Format buffer" 
+})
