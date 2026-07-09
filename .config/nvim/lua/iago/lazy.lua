@@ -79,7 +79,11 @@ require("lazy").setup({
     },
 
     -- OTHER STUFF
-    "theprimeagen/harpoon",
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
     "tpope/vim-fugitive",
     "sindrets/diffview.nvim",
     "lewis6991/gitsigns.nvim",
