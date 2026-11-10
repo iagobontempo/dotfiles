@@ -243,6 +243,14 @@
     {
       "id": "settings",
       "enabled": true
+    },
+    {
+      "id": "wellbeing",
+      "enabled": true
+    },
+    {
+      "id": "notifications",
+      "enabled": false
     }
   ],
   "networkPreference": "ethernet",
@@ -265,10 +273,10 @@
       "cursorHideTimeout": 0
     }
   },
-  "fontFamily": "Inter Variable",
+  "fontFamily": "Google Sans Flex",
   "monoFontFamily": "Iosevka Nerd Font",
   "fontWeight": 300,
-  "fontScale": 0.86,
+  "fontScale": 0.85,
   "textRenderType": 0,
   "textRenderQuality": 0,
   "notepadUseMonospace": true,
@@ -542,6 +550,10 @@
       ],
       "rightWidgets": [
         {
+          "id": "notepadButton",
+          "enabled": true
+        },
+        {
           "id": "systemTray",
           "enabled": true,
           "trayPopupSingleLine": true,
@@ -595,7 +607,7 @@
         }
       ],
       "spacing": 3,
-      "innerPadding": -4,
+      "innerPadding": -2,
       "bottomGap": 0,
       "transparency": 0.78,
       "widgetTransparency": 0.8,
@@ -634,7 +646,11 @@
       "shadowCustomColor": "#ad1457",
       "clickThrough": false,
       "followInterfaceStyle": false,
-      "widgetFollowInterfaceStyle": false
+      "widgetFollowInterfaceStyle": false,
+      "attachToScreenEdge": false,
+      "dot": false,
+      "barLengthMode": "full",
+      "barLengthPercent": 100
     }
   ],
   "desktopWidgetInstances": [],
@@ -645,6 +661,12 @@
     },
     "dms_clipboard_search": {
       "trigger": "cb"
+    },
+    "dms_qr_generator": {
+      "trigger": "qrg"
+    },
+    "dms_power": {
+      "trigger": "pw"
     }
   },
   "clipboardClickToPaste": false,
@@ -659,12 +681,12 @@
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
   "frameEnabled": false,
-  "frameThickness": 16,
+  "frameThickness": 12,
   "frameRounding": 23,
   "frameScreenPreferences": [
     "all"
   ],
-  "frameBarSize": 40,
+  "frameBarSize": 36,
   "frameShowOnOverview": false,
   "frameBlurEnabled": true,
   "frameCloseGaps": true,
@@ -871,8 +893,8 @@
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 40,
-      "spacing": 4,
-      "itemSpacing": 4,
+      "spacing": 6,
+      "itemSpacing": 6,
       "margin": 0,
       "bottomGap": 0,
       "transparency": 1,
@@ -937,5 +959,10 @@
   },
   "dmsWindowsFloatingSeeded": [
     "niri"
-  ]
+  ],
+  "osdWorkspaceEnabled": false,
+  "interfaceStyle": "classic",
+  "density": "compact",
+  "springBounce": 1,
+  "reduceMotion": false
 }
